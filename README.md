@@ -4,6 +4,19 @@
 
 Generate json-schemas from your Typescript sources.
 
+## Polycam Fork README:
+
+Building:
+
+```bash
+yarn install
+npm run build
+```
+
+Make sure to push changes, including built `.js` and `.d.ts` files.
+
+## Original README:
+
 ## Features
 
 - Compiles your Typescript program to get complete type information.

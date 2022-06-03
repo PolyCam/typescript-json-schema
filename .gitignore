@@ -8,6 +8,7 @@ yarn-error.log
 .idea
 *~
 .#*
-dist/
+dist/test/
+dist/**/*.map
 .DS_Store
 .history/
