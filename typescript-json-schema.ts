@@ -1221,7 +1221,8 @@ export class JsonSchemaGenerator {
         if (typ.flags & ts.TypeFlags.Union) {
             const unionType = <ts.UnionType>typ;
             isStringEnum = unionType.types.every((propType) => {
-                return (propType.getFlags() & ts.TypeFlags.StringLiteral) !== 0;
+                const flags = propType.getFlags();
+                return flags & ts.TypeFlags.StringLiteral || flags & ts.TypeFlags.Undefined;
             });
         }
 

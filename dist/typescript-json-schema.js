@@ -914,7 +914,8 @@ var JsonSchemaGenerator = (function () {
         if (typ.flags & ts.TypeFlags.Union) {
             var unionType = typ;
             isStringEnum = unionType.types.every(function (propType) {
-                return (propType.getFlags() & ts.TypeFlags.StringLiteral) !== 0;
+                var flags = propType.getFlags();
+                return flags & ts.TypeFlags.StringLiteral || flags & ts.TypeFlags.Undefined;
             });
         }
         var asTypeAliasRef = asRef && reffedType && (this.args.aliasRef || isStringEnum);
